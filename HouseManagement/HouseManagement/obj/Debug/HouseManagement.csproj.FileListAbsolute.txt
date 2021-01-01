@@ -11,3 +11,16 @@ C:\Users\DELL\Desktop\HouseManagement\HouseManagement\obj\Debug\HouseManagement.
 C:\Users\DELL\Desktop\HouseManagement\HouseManagement\obj\Debug\HouseManagement.fNhanVien.resources
 C:\Users\DELL\Desktop\HouseManagement\HouseManagement\obj\Debug\HouseManagement.fAdmin.resources
 C:\Users\DELL\Desktop\HouseManagement\HouseManagement\obj\Debug\HouseManagement.Khach.resources
+C:\Users\DELL\Desktop\TH HQTCSDL\HouseManagement\HouseManagement\HouseManagement\bin\Debug\HouseManagement.exe.config
+C:\Users\DELL\Desktop\TH HQTCSDL\HouseManagement\HouseManagement\HouseManagement\bin\Debug\HouseManagement.exe
+C:\Users\DELL\Desktop\TH HQTCSDL\HouseManagement\HouseManagement\HouseManagement\bin\Debug\HouseManagement.pdb
+C:\Users\DELL\Desktop\TH HQTCSDL\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.csprojAssemblyReference.cache
+C:\Users\DELL\Desktop\TH HQTCSDL\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.fAdmin.resources
+C:\Users\DELL\Desktop\TH HQTCSDL\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.fNhanVien.resources
+C:\Users\DELL\Desktop\TH HQTCSDL\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.fLogin.resources
+C:\Users\DELL\Desktop\TH HQTCSDL\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.Khach.resources
+C:\Users\DELL\Desktop\TH HQTCSDL\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.Properties.Resources.resources
+C:\Users\DELL\Desktop\TH HQTCSDL\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.csproj.GenerateResource.cache
+C:\Users\DELL\Desktop\TH HQTCSDL\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\TH HQTCSDL\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.exe
+C:\Users\DELL\Desktop\TH HQTCSDL\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.pdb
