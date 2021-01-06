@@ -14,6 +14,12 @@ namespace HouseManagement
 {
     public partial class fNhanVien : Form
     {
+        SqlConnection connection;
+        SqlCommand command;
+        string sqlString = @"";
+        SqlDataAdapter adapter = new SqlDataAdapter();
+        DataTable table = new DataTable();
+
         public fNhanVien()
         {
             InitializeComponent();
@@ -118,6 +124,137 @@ namespace HouseManagement
             dtgvKhachHang.DataSource = DataProvider.Instance.ExecuxeQuery(query, new object[] { });
         }
         #endregion
+
+        void LoadDataTTNha()
+        {
+            try
+            {
+                command = connection.CreateCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "sp_Nha_ThongTinNha";
+                command.ExecuteNonQuery();
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                dgvttnha.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi load dữ liệu" + ex.Message);
+            }
+        }
+
+        private void label60_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThaydoittnha_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "sp_Nha_CapNhatTrangThai";
+            command.Parameters.Add("@ID", SqlDbType.Int).Value = tbManha.Text.Trim();
+            command.Parameters.Add("@status", SqlDbType.Bit).Value = cbTinhtrangnha.Text.Trim();
+            command.Connection = connection;
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+                MessageBox.Show("Thay đổi thành công!");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            LoadDataTTNha();
+            connection.Close();
+        }
+
+        void LoadDataLoaiNha()
+        {
+            try
+            {
+                command = connection.CreateCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "sp_Nha_ThongTinNha";
+                command.ExecuteNonQuery();
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                dgvloainha.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi load dữ liệu" + ex.Message);
+            }
+        }
+        private void btnThaydoiloainha_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "sp_Nha_CapNhatLoaiNha";
+            command.Parameters.Add("IDNha", SqlDbType.Int).Value = tbManha2.Text.Trim();
+            command.Parameters.Add("IDLoaiNha", SqlDbType.Int).Value = cbLoainha.Text.Trim();
+            command.Connection = connection;
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+                MessageBox.Show("Thay đổi thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            LoadDataLoaiNha();
+            connection.Close();
+        }
+
+        void LoadHopDongThue()
+        {
+            try
+            {
+                command = connection.CreateCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "sp_ThongTinHopDongThue";
+                command.ExecuteNonQuery();
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                dgvHopdongthue.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi load dữ liệu" + ex.Message);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "sp_ThemHopDongThue";
+            command.Parameters.Add("IDHopDong", SqlDbType.Int).Value = tbIDHopDong.Text.Trim();
+            command.Parameters.Add("IDKhach", SqlDbType.Int).Value = tbIDKhach.Text.Trim();
+            command.Parameters.Add("IDNha", SqlDbType.Int).Value = tbIDNha.Text.Trim();
+            command.Parameters.Add("startDate", SqlDbType.Date).Value = dtpNgaythue.Text;
+            command.Parameters.Add("endDate", SqlDbType.Date).Value = dtpNgaykt.Text;
+            command.Connection = connection;
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+                MessageBox.Show("Thêm thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            LoadHopDongThue();
+            connection.Close();
+        }
     }
 }
 

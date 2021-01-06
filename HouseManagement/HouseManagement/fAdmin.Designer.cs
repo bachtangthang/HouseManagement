@@ -585,6 +585,7 @@ namespace HouseManagement
             this.Controls.Add(this.tabControl1);
             this.Name = "fAdmin";
             this.Text = "Admin quản lý";
+            this.Load += new System.EventHandler(this.fAdmin_Load);
             groupBox19.ResumeLayout(false);
             groupBox19.PerformLayout();
             this.tabControl1.ResumeLayout(false);

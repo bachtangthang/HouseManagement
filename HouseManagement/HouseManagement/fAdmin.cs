@@ -21,5 +21,10 @@ namespace HouseManagement
         {
             Application.Exit();
         }
+
+        private void fAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
