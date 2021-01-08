@@ -37,3 +37,16 @@ C:\Users\Admin\Desktop\HouseManagement\HouseManagement\HouseManagement\obj\Debug
 C:\Users\Admin\Desktop\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.exe
 C:\Users\Admin\Desktop\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.pdb
+D:\Git\HouseManagement\HouseManagement\HouseManagement\bin\Debug\HouseManagement.exe.config
+D:\Git\HouseManagement\HouseManagement\HouseManagement\bin\Debug\HouseManagement.exe
+D:\Git\HouseManagement\HouseManagement\HouseManagement\bin\Debug\HouseManagement.pdb
+D:\Git\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.csprojAssemblyReference.cache
+D:\Git\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.fAdmin.resources
+D:\Git\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.fNhanVien.resources
+D:\Git\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.fLogin.resources
+D:\Git\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.Khach.resources
+D:\Git\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.Properties.Resources.resources
+D:\Git\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.csproj.GenerateResource.cache
+D:\Git\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.csproj.CoreCompileInputs.cache
+D:\Git\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.exe
+D:\Git\HouseManagement\HouseManagement\HouseManagement\obj\Debug\HouseManagement.pdb

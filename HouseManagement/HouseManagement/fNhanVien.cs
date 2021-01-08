@@ -89,7 +89,7 @@ namespace HouseManagement
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'quanLyNhaDataSet.NHA' table. You can move, or remove it, as needed.
-            this.nHATableAdapter.Fill(this.quanLyNhaDataSet.NHA);
+            //this.nHATableAdapter.Fill(this.quanLyNhaDataSet.NHA);
 
         }
 
@@ -255,7 +255,126 @@ namespace HouseManagement
             LoadHopDongThue();
             connection.Close();
         }
+        //kg vào được connection (báo lỗi chưa gán giá trị nên tạo riêng)
+        SqlConnection connectionOfC = new SqlConnection(@"Data Source=OLD-GOLD-3RD-DE\MSSQLSERVER1;Initial Catalog=QuanLyNha;Integrated Security=True");
+        //Tìm hợp đồng thuê
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int houseID = 0;
+            try
+            {
+                houseID = Int32.Parse(textBox1.Text);
+                if (houseID < 0)
+                    MessageBox.Show("ID khong duoc la be hon 1.", "Input Error!",
+                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    connectionOfC.Open();
+                    try
+                    {                      
+                        SqlCommand findRentContract = new SqlCommand("Find_RentContract", connectionOfC);
+                        findRentContract.CommandType = CommandType.StoredProcedure;
+                        findRentContract.Parameters.AddWithValue("@p_HouseID", SqlDbType.Int).Value = houseID;
+                        findRentContract.Parameters.AddWithValue("@p_StartDate", SqlDbType.Date).Value = dateTimePicker1.Value;
+                        SqlDataReader reader = findRentContract.ExecuteReader();
+                        table = new DataTable();
+                        table.Load(reader);
+                        dataGridView1.DataSource = table;
+                        
+                    }
+                    catch (SqlException sqlExcept)
+                    {
+                        MessageBox.Show(sqlExcept.Message, "SQL Error!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    connectionOfC.Close();
+                }
+            }
+            catch (FormatException except)
+            {
+                MessageBox.Show("Phai nhap ID hop le.\n" + except.Message, "Input Error!",
+                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        //Tìm hợp đông bán
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int houseID = 0;
+            try
+            {
+                houseID = Int32.Parse(textBox2.Text);
+                if (houseID < 0)
+                    MessageBox.Show("ID khong duoc la be hon 1.", "Input Error!",
+                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    connectionOfC.Open();
+                    try
+                    {
+                        SqlCommand findSellContract = new SqlCommand("Find_SellContract", connectionOfC);
+                        findSellContract.CommandType = CommandType.StoredProcedure;
+                        findSellContract.Parameters.AddWithValue("@p_HouseID", SqlDbType.Int).Value = houseID;
+                        findSellContract.Parameters.AddWithValue("@p_SellDate", SqlDbType.Date).Value = dateTimePicker2.Value;
+                        SqlDataReader reader = findSellContract.ExecuteReader();
+                        table = new DataTable();
+                        table.Load(reader);
+                        dataGridView1.DataSource = table;
+                    }
+                    catch (SqlException sqlExcept)
+                    {
+                        MessageBox.Show(sqlExcept.Message, "SQL Error!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    connectionOfC.Close();
+                }
+            }
+            catch (FormatException except)
+            {
+                MessageBox.Show("Phai nhap ID hop le.\n" + except.Message, "Input Error!",
+                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int houseID = 0;
+            try
+            {
+                houseID = Int32.Parse(textBox3.Text);
+                if (houseID < 0)
+                    MessageBox.Show("ID khong duoc la be hon 1.", "Input Error!",
+                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    connectionOfC.Open();
+                    try
+                    {                   
+                        SqlCommand updateSellContract = new SqlCommand("Update_SellContract", connectionOfC);
+                        updateSellContract.CommandType = CommandType.StoredProcedure;
+                        updateSellContract.Parameters.AddWithValue("@p_HouseID", SqlDbType.Int).Value = houseID;
+                        updateSellContract.Parameters.AddWithValue("@p_SellDate", SqlDbType.Date).Value = dateTimePicker3.Value;
+                        updateSellContract.Parameters.AddWithValue("@p_NewSellDate", SqlDbType.Date).Value = dateTimePicker4.Value;
+                        SqlDataReader reader = updateSellContract.ExecuteReader();
+                        table = new DataTable();
+                        table.Load(reader);
+                        dataGridView2.DataSource = table;
+                        
+                    }
+                    catch (SqlException sqlExcept)
+                    {
+                        MessageBox.Show(sqlExcept.Message, "SQL Error!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    connectionOfC.Close();
+                }
+            }
+            catch (FormatException except)
+            {
+                MessageBox.Show("Phai nhap ID hop le.\n" + except.Message, "Input Error!",
+                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
 

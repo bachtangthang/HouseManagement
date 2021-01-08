@@ -18,7 +18,7 @@ namespace HouseManagement.DAO
             private set { DataProvider.instance = value; }
         }
 
-        private string connectionSTR = @"Data Source=DESKTOP-QC3TBIE\SQLEXPRESS;Initial Catalog=QuanLyNha;Integrated Security=True";
+        private string connectionSTR = @"Data Source=OLD-GOLD-3RD-DE\MSSQLSERVER1;Initial Catalog=QuanLyNha;Integrated Security=True";
 
         public DataTable ExecuxeQuery(string query, object[] parameter = null)
         {
