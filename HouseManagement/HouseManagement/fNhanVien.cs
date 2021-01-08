@@ -255,6 +255,7 @@ namespace HouseManagement
             LoadHopDongThue();
             connection.Close();
         }
+
     }
 }
 
